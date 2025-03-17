@@ -4,6 +4,7 @@ import { SignedIn, SignedOut } from "@clerk/clerk-react";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/home/index";
 import FarmPage from "./pages/farm/index";
+import CreatePage from "./pages/create/index"; // Import the new Create Page
 import PrivateRoute from "./components/PrivateRoute";
 import NotFound from "./pages/NotFound";
 import LoginWarning from "./pages/LoginWarning";
@@ -45,6 +46,15 @@ function App() {
               element={
                 <PrivateRoute>
                   <FarmPage />
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path="/create"
+              element={
+                <PrivateRoute>
+                  <CreatePage />
                 </PrivateRoute>
               }
             />
